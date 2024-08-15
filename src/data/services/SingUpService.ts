@@ -24,8 +24,8 @@ export default class SingUpAccount {
                 ))
             }
             return Result.fail({
-                messageResponse:`authError:${responseJson.error.message}`,
-                httpCodeResponse: responseJson.error.code,
+                messageResponse:`authError:${responseJson.message}`,
+                httpCodeResponse: responseJson.code,
                 functionOriginError:`SingUpAccount: execute({${data})`}
             )
 

@@ -1,17 +1,13 @@
-import { InputHTMLAttributes } from "react"
 import { InputStyledElementContainer, InputStyledElementInput, InputStyledElementMandatory, InputStyledElementTextError, InputStyledElementTitle, InputStyledElementTitleField } from "../../styled/Input.styed"
 
-type propsInput = {
+interface propsInput extends React.InputHTMLAttributes<HTMLInputElement> {
     title : string,
-    placeHolder : string,
-    mandatory : boolean,
+    isMandatory : boolean,
     textError? : string,
-    inputProps? : InputHTMLAttributes<HTMLInputElement>
 }
 
 export default function InputStyled(props:propsInput){
-    const mandatory = props.mandatory ? (<InputStyledElementMandatory>*</InputStyledElementMandatory>) : null
-    const inputProps = props.inputProps
+    const mandatory = props.isMandatory ? (<InputStyledElementMandatory>*</InputStyledElementMandatory>) : null
     const textError = props.textError == undefined ? null : (<InputStyledElementTextError>{props.textError}</InputStyledElementTextError>)
     return (
         <InputStyledElementContainer>
@@ -21,7 +17,7 @@ export default function InputStyled(props:propsInput){
                 </InputStyledElementTitle>
                {mandatory}
             </InputStyledElementTitleField>
-            <InputStyledElementInput placeholder={props.placeHolder} {...inputProps}></InputStyledElementInput>
+            <InputStyledElementInput data-mandatory={props.isMandatory||false} {...props}></InputStyledElementInput>
             {textError}
         </InputStyledElementContainer>
     )

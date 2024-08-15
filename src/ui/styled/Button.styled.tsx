@@ -34,3 +34,22 @@ text-align: left;
 white-space: nowrap;
 z-index: 301
 `
+export const ButtonStyledLargeBody = styled.button`
+display: flex;
+height: 48px;
+padding: 0px 12px;
+margin: 30px 0;
+gap: 8px;
+justify-content: center;
+align-items: center;
+align-self: stretch;
+flex-shrink: 0;
+flex-wrap: nowrap;
+background-color: rgb(35, 35, 35);
+border-radius: 12px;
+border: none;
+position: relative;
+overflow: hidden;
+z-index: 42;
+cursor: pointer;
+`

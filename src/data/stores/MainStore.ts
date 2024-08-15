@@ -15,7 +15,7 @@ export type mainState = {
 
 const mainStore = create<mainState>((set) => ({
     user: new User(),
-    modalOpen: enumModalsShow.SING_UP,
+    modalOpen: enumModalsShow.SING_IN,
     formError: [],
 
     setUser: (user) => { set(() => ({ user:user })) },

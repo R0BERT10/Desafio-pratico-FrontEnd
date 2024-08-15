@@ -3,8 +3,6 @@ import mainStore from "./data/stores/MainStore"
 import Home from "./pages/Home"
 import ModalSingIn from "./ui/components/modals/ModalSingIn"
 import ModalSingUp from "./ui/components/modals/ModalSingUp"
-//import ModalSingUp from "./ui/partials/ModalSingUp"
-import ModalSingUpp from "./ui/partials/ModalSingUp/index copy"
 
 
 function App() {
@@ -15,13 +13,6 @@ function App() {
     <>
       <Home></Home>
       <Modal/>
-    </>
-  )
-  return (
-    <>
-    <ModalSingUpp></ModalSingUpp>
-    <ModalSingUp></ModalSingUp>
-      <Home></Home>
     </>
   )
 

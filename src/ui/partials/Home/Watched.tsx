@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import TopActionBarNavigateSection from "../../components/navigators/TopActionBarNavigateSection"
 import { defaultFontFamily } from "../../theme/font"
-import { ButtonStyled, ButtonStyledText } from "../../styled/Button.syled"
+import { ButtonStyled, ButtonStyledText } from "../../styled/Button.styled"
 
 const WatchedStyledSection = styled.section`
 display: flex;
