@@ -8,7 +8,7 @@ import ModalSingUpp from "./ui/partials/ModalSingUp/index copy"
 
 
 function App() {
-  const user = mainStore(state => state.user)
+  //const user = mainStore(state => state.user)
   const modalOpen = mainStore(state => state.modalOpen)
 
   return (
