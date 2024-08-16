@@ -25,3 +25,20 @@ const mainStore = create<mainState>((set) => ({
 
 
 export default mainStore
+
+
+
+export type tempModelState = {
+    userName:string,
+    name:string,
+    setUserName: (user:string) => void
+    setName: (nome:string) => void
+}
+
+export const tempStore = create<tempModelState>((set) => ({
+    userName:"string",
+    name:"string",
+
+    setName: (user) => { set(() => ({ name:user })) },
+    setUserName: (nome) => { set(() => ({ userName:nome }))},
+}))

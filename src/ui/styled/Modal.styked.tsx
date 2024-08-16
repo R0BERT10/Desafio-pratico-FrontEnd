@@ -132,7 +132,7 @@ border-radius: 24px;
 border: 2px solid rgb(35, 35, 35);
 box-sizing: content-box;
 overflow: hidden;
-margin: 187px 0px 0px 320px;
+margin: 20px 0px 0px 320px;
 `
 export const ModalProfileTitleField = styled.div`
 display: flex;

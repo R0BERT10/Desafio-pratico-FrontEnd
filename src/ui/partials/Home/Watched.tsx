@@ -2,6 +2,8 @@ import styled from "styled-components"
 import TopActionBarNavigateSection from "../../components/navigators/TopActionBarNavigateSection"
 import { defaultFontFamily } from "../../theme/font"
 import { ButtonStyled, ButtonStyledText } from "../../styled/Button.styled"
+import mainStore from "../../../data/stores/MainStore"
+import { enumModalsShow } from "../../../data/@types/enumModalState"
 
 const WatchedStyledSection = styled.section`
 display: flex;
@@ -91,6 +93,7 @@ text-align: center
 `
 const TopNavigate = TopActionBarNavigateSection
 export default function Watched() {
+  const onClickLogin = mainStore(state=>state.setModalOpen)
     return (
     <WatchedStyledSection>
         <WatchedStyledContainer>
@@ -116,7 +119,7 @@ export default function Watched() {
               </WatchedStyledSubTitle>
             </WatchedStyledTextBox>
             <ButtonStyled>
-              <ButtonStyledText>
+              <ButtonStyledText onClick={()=>onClickLogin(enumModalsShow.SING_IN)}>
                 Fazer login
               </ButtonStyledText>
             </ButtonStyled>

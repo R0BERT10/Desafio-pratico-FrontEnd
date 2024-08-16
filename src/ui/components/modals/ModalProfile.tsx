@@ -1,9 +1,7 @@
 import InputStyled from "../inputs/InputStyled"
-import { ModalProfileButtonsRowField, ModalProfileCloseButton, ModalProfileContainer, ModalProfileEssentialDataContainer, ModalProfileNoEssentialDataContainer, ModalProfileNoEssentialFields, ModalProfileRectangularButton, ModalProfileRectangularNegativeButton, ModalProfileSubTDescription, ModalProfileSubTitle, ModalProfileTextDescription, ModalProfileTitle, ModalProfileTitleField, ModalStyledForm } from "../../styled/Modal.styked"
+import { ModalProfileButtonsRowField, ModalProfileCloseButton, ModalProfileContainer, ModalProfileEssentialDataContainer, ModalProfileNoEssentialDataContainer, ModalProfileNoEssentialFields, ModalProfileRectangularButton, ModalProfileRectangularNegativeButton, ModalProfileSubTDescription, ModalProfileSubTitle, ModalProfileTextDescription, ModalProfileTitle, ModalProfileTitleField, ModalStyledBody, ModalStyledForm } from "../../styled/Modal.styked"
 import User from "../../../data/entities/User"
 import mainStore from "../../../data/stores/MainStore"
-import { enumModalsShow } from "../../../data/@types/enumModalState"
-import { onUpdateFormSubmit } from "../../../data/hooks/onUpdadeFormSubmit"
 import { onDeleteSubmit } from "../../../data/hooks/deleteAccount"
 
 export type modalProfileProps = {
@@ -16,23 +14,21 @@ export default function ModalProfile (props: modalProfileProps) {
         setModalOpen: mainStore(state=>state.setModalOpen),
     }
 
-    const onClose = () => states.setModalOpen(enumModalsShow.NONE)
-
     return (
+        <ModalStyledBody>
         <ModalProfileContainer>
             <ModalProfileTitleField>
                 <ModalProfileTitle>Preferências da conta</ModalProfileTitle>
-                <ModalProfileCloseButton onClick={onClose} />
+                <ModalProfileCloseButton />
             </ModalProfileTitleField>
-            <ModalStyledForm onSubmit={e => onUpdateFormSubmit(e, states)}>
                 <ModalProfileNoEssentialDataContainer>
                     <ModalProfileSubTDescription>
                         <ModalProfileSubTitle>Usuário</ModalProfileSubTitle>
                         <ModalProfileTextDescription>Faça a edição do seu nome de usuário e de seu nome.</ModalProfileTextDescription>
                     </ModalProfileSubTDescription>
                     <ModalProfileNoEssentialFields>
-                        <InputStyled title={"Nome de usuário"} name="user" isMandatory={true} value={props.user.user} />
-                        <InputStyled title={"Nome completo"} name="name" isMandatory={true} value={props.user.name} />
+                        <InputStyled title={"Nome de usuário"} name="user" isMandatory={true} defaultValue={props.user.user} />
+                        <InputStyled title={"Nome completo"} name="name" isMandatory={true} defaultValue={props.user.name} />
                     </ModalProfileNoEssentialFields>
                 </ModalProfileNoEssentialDataContainer>
                 <ModalProfileEssentialDataContainer>
@@ -52,7 +48,7 @@ export default function ModalProfile (props: modalProfileProps) {
                         <ModalProfileRectangularButton type="submit">Salvar alterações</ModalProfileRectangularButton>
                     </ModalProfileButtonsRowField>
                 </ModalProfileNoEssentialDataContainer>
-            </ModalStyledForm>
         </ModalProfileContainer>
+        </ModalStyledBody>
     )
 }

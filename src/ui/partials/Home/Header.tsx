@@ -1,5 +1,9 @@
+import { enumModalsShow } from "../../../data/@types/enumModalState"
+import mainStore from "../../../data/stores/MainStore"
+
 
 export default function Header() {
+  const onClickLogin = mainStore(state=>state.setModalOpen)
     return (
         <div
         style={{
@@ -203,6 +207,7 @@ export default function Header() {
           </div>
         </div>
         <button
+        onClick={()=>onClickLogin(enumModalsShow.SING_IN)}
           style={{
             display: 'flex',
             width: '128px',
