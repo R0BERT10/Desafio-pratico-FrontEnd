@@ -33,7 +33,7 @@ export default function ModalSingIn() {
                             <ModalStyledSubTitle>Bem vindo de volta! Entre com seus dados.</ModalStyledSubTitle>
                         </ModalStyledTitleField>
                             <InputStyled title="E-mail" name="email" placeholder="Digite seu e-mail" isMandatory={true} textError={errorText.email}/>
-                            <InputStyled title="Senha" name="pass" placeholder="Digite sua senha" isMandatory={true} textError={errorText.pass}/>
+                            <InputStyled title="Senha" name="pass" placeholder="Digite sua senha" isMandatory={true} type="password" textError={errorText.pass}/>
                             <ButtonStyledLarge type="submit">Fazer login</ButtonStyledLarge>
                     </ModalStyledForm>
                     <ModalStyledFooterBox>
