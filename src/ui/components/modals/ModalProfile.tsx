@@ -1,5 +1,5 @@
 import InputStyled from "../inputs/InputStyled"
-import { ModalProfileButtonsRowField, ModalProfileCloseButton, ModalProfileContainer, ModalProfileEssentialDataContainer, ModalProfileNoEssentialDataContainer, ModalProfileNoEssentialFields, ModalProfileRectangularButton, ModalProfileRectangularNegativeButton, ModalProfileSubTDescription, ModalProfileSubTitle, ModalProfileTextDescription, ModalProfileTitle, ModalProfileTitleField, ModalStyledBody, ModalStyledForm } from "../../styled/Modal.styked"
+import { ModalProfileButtonsRowField, ModalProfileCloseButton, ModalProfileContainer, ModalProfileEssentialDataContainer, ModalProfileNoEssentialDataContainer, ModalProfileNoEssentialFields, ModalProfileRectangularButton, ModalProfileRectangularNegativeButton, ModalProfileSubTDescription, ModalProfileSubTitle, ModalProfileTextDescription, ModalProfileTitle, ModalProfileTitleField, ModalStyledBody } from "../../styled/Modal.styked"
 import User from "../../../data/entities/User"
 import mainStore from "../../../data/stores/MainStore"
 import { onDeleteSubmit } from "../../../data/hooks/deleteAccount"
