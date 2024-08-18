@@ -3,7 +3,7 @@ import { enumModalsShow } from "../../../data/@types/enumModalState"
 import { cleanField } from "../../../data/hooks/cleanFieldSubmit"
 import { onSingInFormSubmit } from "../../../data/hooks/onSingInFromSubmit"
 import mainStore from "../../../data/stores/MainStore"
-import { ModalStyledBody, ModalStyledCenterBox, ModalStyledContainer, ModalStyledFooterBox, ModalStyledFooterTextCenter, ModalStyledForm, ModalStyledSubTitle, ModalStyledTextAnchor, ModalStyledTitle, ModalStyledTitleField } from "../../styled/Modal.styked"
+import { ModalStyledBody, ModalStyledCenterBox, ModalStyledContainer, ModalStyledFooterBox, ModalStyledFooterTextCenter, ModalStyledForm, ModalStyledSubTitle, ModalStyledTextAnchor, ModalStyledTitle, ModalStyledTitleField } from "../../styled/Modal.styed"
 import { ButtonStyledLarge } from "../inputs/ButtonSyledLarge"
 import InputStyled from "../inputs/InputStyled"
 

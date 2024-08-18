@@ -1,14 +1,11 @@
 import InputStyled from "../inputs/InputStyled"
-import { ModalProfileButtonsRowField, ModalProfileCloseButton, ModalProfileContainer, ModalProfileEssentialDataContainer, ModalProfileNoEssentialDataContainer, ModalProfileNoEssentialFields, ModalProfileRectangularButton, ModalProfileRectangularNegativeButton, ModalProfileSubTDescription, ModalProfileSubTitle, ModalProfileTextDescription, ModalProfileTitle, ModalProfileTitleField, ModalStyledBody } from "../../styled/Modal.styked"
-import User from "../../../data/entities/User"
+import { ModalProfileButtonsRowField, ModalProfileCloseButton, ModalProfileContainer, ModalProfileEssentialDataContainer, ModalProfileNoEssentialDataContainer, ModalProfileNoEssentialFields, ModalProfileRectangularButton, ModalProfileRectangularNegativeButton, ModalProfileSubTDescription, ModalProfileSubTitle, ModalProfileTextDescription, ModalProfileTitle, ModalProfileTitleField, ModalStyledBody } from "../../styled/Modal.styed"
 import mainStore from "../../../data/stores/MainStore"
 import { onDeleteSubmit } from "../../../data/hooks/deleteAccount"
 
-export type modalProfileProps = {
-    user: User
-}
-export default function ModalProfile (props: modalProfileProps) {
+export default function ModalProfile () {
     const states = {
+        user: mainStore(state=>state.user),
         setUser: mainStore(state=>state.setUser),
         setFormError: mainStore(state=>state.setFormError),
         setModalOpen: mainStore(state=>state.setModalOpen),
@@ -27,8 +24,8 @@ export default function ModalProfile (props: modalProfileProps) {
                         <ModalProfileTextDescription>Faça a edição do seu nome de usuário e de seu nome.</ModalProfileTextDescription>
                     </ModalProfileSubTDescription>
                     <ModalProfileNoEssentialFields>
-                        <InputStyled title={"Nome de usuário"} name="user" isMandatory={true} defaultValue={props.user.user} />
-                        <InputStyled title={"Nome completo"} name="name" isMandatory={true} defaultValue={props.user.name} />
+                        <InputStyled title={"Nome de usuário"} name="user" isMandatory={true} defaultValue={states.user.user} />
+                        <InputStyled title={"Nome completo"} name="name" isMandatory={true} defaultValue={states.user.name} />
                     </ModalProfileNoEssentialFields>
                 </ModalProfileNoEssentialDataContainer>
                 <ModalProfileEssentialDataContainer>
@@ -36,7 +33,7 @@ export default function ModalProfile (props: modalProfileProps) {
                         <ModalProfileSubTitle>E-mail</ModalProfileSubTitle>
                         <ModalProfileTextDescription>O e-mail não pode ser editado, apenas visualizado.</ModalProfileTextDescription>
                     </ModalProfileSubTDescription>
-                    <InputStyled title={"E-mail"} name="email" isMandatory={true} disabled={true} value={props.user.email} />
+                    <InputStyled title={"E-mail"} name="email" isMandatory={true} disabled={true} value={states.user.email} />
                 </ModalProfileEssentialDataContainer>
                 <ModalProfileNoEssentialDataContainer>
                     <ModalProfileSubTDescription>

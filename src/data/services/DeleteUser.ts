@@ -11,10 +11,10 @@ export default class DeleteProfile {
     async execute({idToken}: DeleteProfilePropsDate): Promise<Result<Boolean>> {
         try {
             const response = await fetch(`${link}/account:deleteProfile`, options.POST({idToken}))
-            const responseJson = await response.json()
             if (response.ok) {
                 return Result.ok(true)
             }
+            const responseJson = await response.json()
             return Result.fail({
                 messageResponse:`authError:${responseJson.message}`,
                 httpCodeResponse: responseJson.code,

@@ -5,6 +5,7 @@ import DeleteProfile from "../services/DeleteUser"
 
 export function onDeleteSubmit(handles:handleSubmitStates ) {
     const { user, setUser, setModalOpen } = handles
+    console.log(user)
     const idToken = user?.idToken
     if (idToken == undefined) { throw Error("E necessario o usuario logado.") }
 
