@@ -7,7 +7,6 @@ import ModalSingUp from "./ui/components/modals/ModalSingUp"
 
 
 function App() {
-  const user = mainStore(state => state.user)
   const modalOpen = mainStore(state => state.modalOpen)
   
   return (
@@ -24,7 +23,7 @@ function App() {
       case enumModalsShow.SING_IN:
         return (<ModalSingIn/>)
       case enumModalsShow.PROFILE:
-        return (<ModalProfile user={user}/>)
+        return (<ModalProfile/>)
       case enumModalsShow.NONE:
         return null
     }
