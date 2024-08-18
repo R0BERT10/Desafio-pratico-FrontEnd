@@ -84,10 +84,8 @@ font-size: 12px;
 font-weight: 400;
 line-height: 12px;
 color: rgb(225, 29, 72);
-position: absolute;
-top: 73px;
-left: 0px;
 text-align: left;
 white-space: nowrap;
 z-index: 13;
+padding-left: 25px;
 `

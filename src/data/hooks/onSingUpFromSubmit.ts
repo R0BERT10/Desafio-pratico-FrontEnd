@@ -3,7 +3,7 @@ import FormFieldError, { enumFormErrorType, enumFormFieldError } from "../@types
 import { handleSubmitStates } from "../@types/@handlesSubmit";
 import SingUpAccount from "../services/SingUpService";
 import { enumModalsShow } from "../@types/enumModalState";
-import { checkMandatoryRequestAndAddToErrorList, checkMessageErrorResponse } from "../../util/helpForms";
+import { checkMandatoryRequestAndAddToErrorList, checkMessageErrorResponse, validateEmail } from "../../util/helpForms";
 
 export function onSingUpFormSubmit(event: React.FormEvent, handles:handleSubmitStates ) {
     event.preventDefault()
@@ -20,6 +20,16 @@ export function onSingUpFormSubmit(event: React.FormEvent, handles:handleSubmitS
     const replyPassElement = target.rPass
     checkMandatoryRequestAndAddToErrorList(replyPassElement, fieldError, enumFormFieldError.ERROR_REP_PASS)
 
+    if (!validateEmail(emailElement.value)){
+        fieldError.push(new FormFieldError(
+            enumFormFieldError.ERROR_EMAIL, enumFormErrorType.INCORRECT
+        ))
+    }
+    if (passElement.value.length < 8){
+        fieldError.push(new FormFieldError(
+            enumFormFieldError.ERROR_PASS, enumFormErrorType.INCORRECT
+        ))
+    }
     if (passElement.value != replyPassElement.value){
         fieldError.push(new FormFieldError(
             enumFormFieldError.ERROR_REP_PASS, enumFormErrorType.INCORRECT
